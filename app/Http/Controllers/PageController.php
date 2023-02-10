@@ -15,6 +15,7 @@ class PageController extends Controller
      */
     public function __invoke($slug)
     {
-        return Page::findBySlug($slug);
+        $page = Page::findBySlug($slug);
+        return view('page', compact('page'));
     }
 }
